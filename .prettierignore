@@ -1,0 +1,7 @@
+node_modules
+dist
+public/mockServiceWorker.js
+playwright-report
+test-results
+lighthouse/reports
+package-lock.json

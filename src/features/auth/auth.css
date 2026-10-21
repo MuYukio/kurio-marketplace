@@ -1,0 +1,112 @@
+/* Atributo de layout acompanha matchMedia e evita estado visual incorreto ao redimensionar. */
+.auth-route[data-layout='desktop'] .auth-backdrop {
+  display: block;
+}
+
+.auth-card[data-layout='desktop'] {
+  position: fixed;
+  z-index: 40;
+  top: 50%;
+  left: 50%;
+  width: min(540px, calc(100vw - 32px));
+  max-height: calc(100dvh - 24px);
+  overflow-y: auto;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 700px) {
+  main.container:has(.auth-route) {
+    max-width: none;
+    min-height: 100dvh;
+    padding: 0 7px;
+    background: color-mix(in srgb, var(--foreground) 10%, var(--background));
+  }
+
+  .auth-route[data-layout='mobile'] {
+    display: block;
+    min-height: 100dvh;
+    padding: 0;
+  }
+
+  .auth-route[data-layout='mobile'] .auth-backdrop {
+    display: none;
+  }
+
+  .auth-card[data-layout='mobile'] {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    min-height: calc(100dvh - 14px) !important;
+    max-height: none;
+    margin: 0;
+    padding: 96px 19px 28px;
+    overflow: visible;
+    border: 0;
+    border-radius: 30px;
+    background: var(--background);
+    transform: none;
+  }
+
+  .auth-card[data-layout='mobile'].register {
+    padding-top: 102px;
+  }
+
+  .auth-mobile-brand {
+    margin-bottom: 62px;
+    font-size: 24px;
+  }
+
+  .auth-card.register .auth-mobile-brand {
+    margin-bottom: 64px;
+  }
+
+  .auth-mobile-title {
+    margin-bottom: 26px;
+    font-size: 16px;
+  }
+
+  .auth-card .field {
+    margin-top: 9px;
+  }
+
+  .auth-card input {
+    min-height: 44px;
+    padding-inline: 12px;
+    font-size: 11px !important;
+  }
+
+  .auth-forgot {
+    margin: 7px 0 27px auto;
+    font-size: 10px;
+  }
+
+  .auth-submit {
+    min-height: 47px;
+    margin-top: 19px;
+    font-size: 13px;
+  }
+
+  .auth-card.login .auth-submit {
+    margin-top: 0;
+  }
+
+  .auth-divider {
+    margin: 32px 0 12px;
+    font-size: 9px;
+  }
+
+  .auth-socials {
+    gap: 12px;
+  }
+
+  .auth-socials button {
+    min-height: 36px;
+    font-size: 10px;
+  }
+
+  .auth-switch-mobile {
+    margin-top: 34px;
+    font-size: 10px;
+  }
+}
