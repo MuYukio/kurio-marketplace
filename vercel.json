@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm run build:demo",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/((?!assets/|mockServiceWorker.js|favicon.svg|robots.txt).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
